@@ -72,6 +72,7 @@
         opacity: 1;
         height: 15vw;
         width: 80vw;
+        -webkit-appearance: none;
     }
     
     .copy {
