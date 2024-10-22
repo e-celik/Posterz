@@ -14,8 +14,9 @@ async function fetchData() {
 function parseCSV(data) {
     const rows = data.split('\n').slice(1); // Remove header row
     return rows.map(row => {
-        const [posterUrl, date, time, address] = row.split(',');
-        return { posterUrl, date, time, address };
+        const [posterName, posterUrl, ignore, date, time, address] = row.split(',');
+
+        return { posterName, posterUrl, date, time, address };
     });
 }
 
@@ -27,7 +28,7 @@ function renderCards(cards) {
         const cardElement = document.createElement('div');
         cardElement.className = 'card';
         cardElement.innerHTML = `
-            <img class="poster" src="${card.posterUrl.trim()}" alt="Event Poster">
+            <img class="poster" src="${card.posterUrl.trim()}" alt="${card.posterName}">
             <div class="cardInfo">
                 <h4 class="date">${card.date.trim()}</h4>
                 <p class="time">${card.time.trim()}</p>

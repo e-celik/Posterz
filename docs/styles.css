@@ -17,12 +17,12 @@ h1 {
 /* Flex container for the cards */
 .card-container {
     display: flex;
-    justify-content: space-between; /* Space cards evenly from left to right */
+    justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    max-width: 1400px; /* Increased max width for larger screens */
+    max-width: 1400px;
     padding: 20px;
-    gap: 30px; /* Increase the gap between cards */
+    gap: 30px;
     margin: 0 auto;
 }
 
@@ -36,14 +36,15 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: auto; /* Width adjusts based on the poster */
+    width: 100%; /* Make the card take full available width */
+    max-width: 600px; /* Increased max width for wider cards */
 }
 
-/* Poster image styling with fixed height and variable width */
+/* Poster image styling */
 .poster {
-    height: 400px; /* Increase height for larger cards */
-    width: auto; /* Width adjusts based on the image aspect ratio */
-    object-fit: contain; /* Ensure the poster is not cropped */
+    height: auto; /* Allow height to adjust based on the width */
+    width: 100%; /* Make the poster take the full width of the card */
+    object-fit: contain;
     display: block;
     background-color: #444;
 }
@@ -54,59 +55,58 @@ h1 {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 15px; /* Increase padding for larger cards */
+    padding: 20px; /* Increase padding for larger cards */
     width: 100%;
     background-color: #2a2a2a;
     box-sizing: border-box;
 }
 
 .date {
-    font-size: 1.6em; /* Increase font size */
+    font-size: 1.8em;
     font-weight: bold;
     margin: 0;
     color: #ffffff;
 }
 
 .time {
-    font-size: 1.4em; /* Increase font size */
+    font-size: 1.6em;
     color: #e0e0e0;
-    margin: 8px 0;
+    margin: 10px 0;
 }
 
 .address {
-    font-size: 1.3em; /* Increase font size */
+    font-size: 1.5em;
     color: #b0b0b0;
     text-align: center;
-    margin: 8px 0;
+    margin: 10px 0;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .card-container {
-        flex-direction: column; /* Stack cards vertically on smaller screens */
+        flex-direction: column;
         align-items: center;
     }
 
     .card {
-        width: 90%; /* Fixed width for smaller screens */
-        height: auto; /* Height adjusts based on content */
-        max-width: 400px; /* Optional: Limit the max width for larger small screens */
+        width: 90%; /* Set card width relative to the viewport */
+        max-width: 500px; /* Adjust max width for smaller screens */
     }
 
     .poster {
-        width: 100%; /* Make the poster take the full width of the card */
-        height: auto; /* Adjust height to maintain aspect ratio */
+        width: 100%;
+        height: auto;
     }
 
     .date {
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
 
     .time {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     .address {
-        font-size: 0.9em;
+        font-size: 1.1em;
     }
 }
