@@ -20,10 +20,6 @@ function parseCSV(data) {
     });
 }
 
-function getID(input) {
-    const parts = input.split('/');
-    return parts[parts.length - 1];
-}
 
 function renderCards(cards) {
     const container = document.getElementById('cardContainer');
@@ -33,7 +29,7 @@ function renderCards(cards) {
         const cardElement = document.createElement('div');
         cardElement.className = 'card';
         cardElement.innerHTML = `
-            <img class="poster" src="https://drive.google.com/thumbnail?id=${getID(card.posterUrl.trim())}&sz=w1000" alt="${card.posterName}">
+            <img class="poster" src="${card.posterUrl.trim()}" alt="${card.posterName}">
             <div class="cardInfo">
                 <h4 class="date">${card.date.trim()}</h4>
                 <p class="time">${card.time.trim()}</p>
