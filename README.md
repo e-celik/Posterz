@@ -5,4 +5,8 @@ A website/app featuring a scrollable list of posters promoting local and upcomin
 
 https://e-celik.github.io/Posterz/  
 
+or: 
+
+https://www.sd-posterz.com/
+
 _wip_
